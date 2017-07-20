@@ -1,7 +1,6 @@
 package ec.com.ucuenca;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -24,6 +23,7 @@ public class SeleniumTest {
     }
     @BeforeTest
     public void beforeTest() {
+        System.out.println("========>>>>" + System.getProperty("webdriver.chrome.driver"));
         ChromeDriverManager.getInstance().setup();
         driver = new ChromeDriver();
     }

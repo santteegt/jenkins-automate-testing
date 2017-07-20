@@ -1,5 +1,6 @@
 jenkins_home/
 target/
+chromedriver/
 *.iml
 .idea
 
