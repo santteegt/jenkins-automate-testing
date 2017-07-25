@@ -1,6 +1,7 @@
 package ec.com.ucuenca;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import org.jruby.RubyProcess;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -23,13 +24,14 @@ public class SeleniumTest {
     }
     @BeforeTest
     public void beforeTest() {
-        System.out.println("========>>>>" + System.getProperty("webdriver.chrome.driver"));
         ChromeDriverManager.getInstance().setup();
         driver = new ChromeDriver();
     }
     @AfterTest
     public void afterTest() {
-        driver.quit();
+        if(driver != null) {
+            driver.quit();
+        }
     }
 
 
